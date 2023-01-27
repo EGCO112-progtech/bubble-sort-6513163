@@ -39,19 +39,19 @@ void bubbleSort(int a[],int n){
 int i,j;
 int sorted;
 // how may pair to compare?
-for(j=0;j<=n-1;j++)
-  sorted=1;
-  for(i=0;i<n-j;i++){
-    if (a[i] > a[i+1])
+for(i=0;i<n-1;i++){
+  printf("ROUND %d\n",i);
+  sorted=0;
+  for(j=0;j<n-1-i;j++){
+    if (a[j] > a[j+1])
     {
-      swap(&a[i],&a[i+1]);
-      sorted=0;
+      swap(&a[j],&a[j+1]);
+      sorted=1;
     } 
     display(a,n);
-    if(sorted==0) break;
   }
-  
- 
+  if(sorted==0) break;
+ } 
 }
 
 
